@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI2_Component {
     public static void main(String[] args) {
@@ -23,6 +25,14 @@ public class GUI2_Component {
         String[] EXO = {"한명을 선택해주세요", "도경수", "박찬열", "김민석", "김준면", "오세훈", "김종대", "장이씽", "김종인", "변백현"};
         JComboBox<String> cbox0 = new JComboBox<>(EXO);
         cbox0.addItem("김수진"); //이렇게 나중에 추가하는 방법도 있다.
+
+
+        bt0.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                bt0.setText("Clicked");
+            }
+        });
 
         panel.add(lb0);
         panel.add(bt0);
