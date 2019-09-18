@@ -26,11 +26,13 @@ public class GUI2_Component {
         JComboBox<String> cbox0 = new JComboBox<>(EXO);
         cbox0.addItem("김수진"); //이렇게 나중에 추가하는 방법도 있다.
 
+        JLabel lbResult = new JLabel("Result");
+
 
         bt0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                bt0.setText("Clicked");
+                bt0.setText("Clicked"); //버튼 누르면 Clicked라고 나옴
             }
         });
 
@@ -43,6 +45,7 @@ public class GUI2_Component {
         panel.add(tf0);
         panel.add(ta0);
         panel.add(cbox0);
+        panel.add(lbResult);
 
         frame.add(panel);
 
