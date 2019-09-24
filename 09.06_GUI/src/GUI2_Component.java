@@ -33,6 +33,19 @@ public class GUI2_Component {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 bt0.setText("Clicked"); //버튼 누르면 Clicked라고 나옴
+
+                String result = "";
+                result+=lb0.getText();
+                result+=bt0.getText();
+                result+=cb0.isSelected();
+                result+=cb1.isSelected();
+                result+= rb0.isSelected();
+                result+=rb1.isSelected();
+                result+=tf0.getText();
+                result+=ta0.getText();
+                result+=cbox0.getSelectedIndex();
+                result+=cbox0.getSelectedItem();
+                lbResult.setText(result);
             }
         });
 
