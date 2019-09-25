@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class GUI2_Component {
     public static void main(String[] args) {
@@ -28,6 +27,25 @@ public class GUI2_Component {
 
         JLabel lbResult = new JLabel("Result");
 
+        cb1.setSelected(true);
+        rb0.setSelected(true);
+        tf0.setText("전화번호를 입력하세요");
+
+        tf0.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent focusEvent) {    //관심받기
+                if(tf0.getText().equals("전화번호를 입력하세요")) {
+                    tf0.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent focusEvent) {  //관심잃기
+                if(tf0.getText().equals("")) {
+                    tf0.setText("전화번호 입력하세요");
+                }
+            }
+        });
 
         bt0.addActionListener(new ActionListener() {
             @Override
@@ -48,6 +66,27 @@ public class GUI2_Component {
                 lbResult.setText(result);
             }
         });
+
+        ItemListener il = new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if(e.getSource() == cb0) {
+                    System.out.println("JCheckbox0 : " + cb0.isSelected());
+                } else if(e.getSource() == cb1) {
+                    System.out.println("JCheckbox0 : " + cb1.isSelected());
+                } else if(e.getSource() == rb0) {
+                    System.out.println("미성년자 : " + rb0.isSelected());
+                } else if(e.getSource() == rb1) {
+                    System.out.println("성인 : " + rb1.isSelected());
+                } else if(e.getSource() == cbox0) {
+                    System.out.println("체크박스 : " + cbox0.getSelectedItem());
+                }
+            }
+        };
+        cb0.addItemListener(il);
+        cb1.addItemListener(il);
+        rb0.addItemListener(il);
+        rb1.addItemListener(il);
 
         panel.add(lb0);
         panel.add(bt0);
