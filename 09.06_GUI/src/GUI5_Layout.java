@@ -19,10 +19,10 @@ public class GUI5_Layout {
         JButton bt4 = new JButton("Button" + 4);
         JButton bt5 = new JButton("Button" + 5);
         panel.add(bt0, BorderLayout.NORTH);
-        panel.add(bt1, BorderLayout.WEST);
+//        panel.add(bt1, BorderLayout.WEST);
         panel.add(bt2, BorderLayout.CENTER);
         panel.add(bt3, BorderLayout.EAST);
-        panel.add(bt4, BorderLayout.SOUTH);
+//        panel.add(bt4, BorderLayout.SOUTH);
         panel.add(bt5, BorderLayout.NORTH);
 
 
